@@ -1,9 +1,10 @@
 package fr.isen.trust.trustdroid.player;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListPlayer {
+public class ListPlayer implements Serializable {
 
     private List<Player> listPlayer;
 
@@ -13,6 +14,10 @@ public class ListPlayer {
 
     public int getSize() {
         return this.listPlayer.size();
+    }
+
+    public void removePlayer(int index) {
+        this.listPlayer.remove(index);
     }
 
     public void addPlayer(Player player) {

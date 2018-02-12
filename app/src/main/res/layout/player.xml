@@ -25,10 +25,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text=""
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/photo_player"
+        app:layout_constraintEnd_toStartOf="@+id/delete_player"
+        app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toEndOf="@+id/photo_player"
-        app:layout_constraintTop_toTopOf="@+id/photo_player" />
+        app:layout_constraintTop_toTopOf="@+id/photo_player"
+        app:layout_constraintVertical_bias="0.521" />
+
+    <ImageButton
+        android:id="@+id/delete_player"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/todo"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_delete" />
 
 </android.support.constraint.ConstraintLayout>

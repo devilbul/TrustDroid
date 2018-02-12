@@ -1,6 +1,5 @@
 package fr.isen.trust.trustdroid.new_game;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -32,23 +31,25 @@ public class NewGameActivity extends AppCompatActivity {
         listPlayer = new ListPlayer();
         mRecyclerView = findViewById(R.id.players);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        listPlayer.addPlayer(new Player("Romain", "https://randomuser.me/api/portraits/men/23.jpg"));
-        listPlayer.addPlayer(new Player("Elouan", "https://randomuser.me/api/portraits/men/23.jpg"));
-        listPlayer.addPlayer(new Player("Ludovic", "https://randomuser.me/api/portraits/men/23.jpg"));
-        listPlayer.addPlayer(new Player("Ethan", "https://randomuser.me/api/portraits/men/23.jpg"));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mRecyclerView.setAdapter(new MyAdapter(getApplicationContext()));
+        Bundle bundle = getIntent().getExtras();
 
-        if (listPlayer.getSize() > minPlayer) startGame.setVisibility(View.VISIBLE);
+        if (bundle != null)
+            listPlayer = ((ListPlayer) getIntent().getExtras().getSerializable("new list player"));
+        if (listPlayer.getSize() > minPlayer)
+            startGame.setVisibility(View.VISIBLE);
         if (listPlayer.getSize() == maxPlayer) addPlayer.setVisibility(View.INVISIBLE);
+
+        mRecyclerView.setAdapter(new MyAdapter(getApplicationContext()));
     }
 
     public void addPlayer(View v) {
-        startActivity(new Intent(getApplicationContext(), AddPlayerActivity.class));
+        Intent addPlayer = new Intent(getApplicationContext(), AddPlayerActivity.class);
+        addPlayer.putExtra("list player", listPlayer);
+        startActivity(addPlayer);
     }
 }
