@@ -10,7 +10,6 @@ import android.widget.Button;
 
 import fr.isen.trust.trustdroid.R;
 import fr.isen.trust.trustdroid.player.ListPlayer;
-import fr.isen.trust.trustdroid.player.Player;
 
 public class NewGameActivity extends AppCompatActivity {
 
