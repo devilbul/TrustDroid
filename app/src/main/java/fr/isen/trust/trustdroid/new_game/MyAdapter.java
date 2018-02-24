@@ -2,6 +2,7 @@ package fr.isen.trust.trustdroid.new_game;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,23 +19,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.isen.trust.trustdroid.R;
+import fr.isen.trust.trustdroid.player.ListPlayer;
 import fr.isen.trust.trustdroid.player.Player;
+import fr.isen.trust.trustdroid.util.CircleTransform;
 
-import static fr.isen.trust.trustdroid.new_game.NewGameActivity.listPlayer;
 import static fr.isen.trust.trustdroid.util.Find.findPlayer;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private int nb = listPlayer.getSize();
     private List<Pair<String, Player>> players = new ArrayList<>();
+    private ListPlayer listPlayer;
     private Context context;
 
-    public MyAdapter(Context context) {
+    public MyAdapter(ListPlayer listPlayer, Context context) {
+        this.listPlayer = listPlayer;
         this.context = context;
     }
 
     @Override
     public int getItemCount() {
-        return nb;
+        return listPlayer.getSize();
     }
 
     @Override
@@ -42,7 +45,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.player, parent, false);
 
-        for (int i = 0; i < nb; i++)
+
+        for (int i = 0; i < listPlayer.getSize(); i++)
             players.add(Pair.create(listPlayer.getPlayer(i).getUsername(), listPlayer.getPlayer(i)));
 
         return new MyViewHolder(view);
@@ -52,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Pair<String, Player> pair = players.get(position);
         holder.display(pair);
-        holder.setOnClick(pair);
+        holder.setOnClick(pair, this);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -67,27 +71,37 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             delete = itemView.findViewById(R.id.delete_player);
         }
 
-        public void setOnClick(final Pair<String, Player> pair) {
+        public void setOnClick(final Pair<String, Player> pair, final MyAdapter adapter) {
             final Player player = pair.second;
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listPlayer.removePlayer(findPlayer(listPlayer, player.getUsername()));
+                    int index = findPlayer(listPlayer, player.getUsername());
+                    listPlayer.removePlayer(index);
                     Toast.makeText(context, "Joueur supprimé !", Toast.LENGTH_SHORT).show();
-                    Intent refresh = new Intent(context, NewGameActivity.class);
-                    refresh.putExtra("new list player", listPlayer);
-                    context.startActivity(refresh);
+                    adapter.notifyItemRemoved(index);
+
+                    if (listPlayer.getSize() == 1) {
+                        Intent refresh = new Intent(context, NewGameActivity.class);
+                        refresh.putExtra("new list player", listPlayer);
+                        context.startActivity(refresh);
+                    }
                 }
             });
         }
 
         public void display(Pair<String, Player> pair) {
             usernamePlayer.setText(pair.first);
-            Picasso.with(context)
-                    .load(pair.second.getPhoto())
-                    .fit().centerCrop()
-                    .transform(new CircleTransform())
-                    .into(photoPlayer);
+
+            if (pair.second.getPhoto().startsWith("http")) {
+                Picasso.with(context)
+                        .load(pair.second.getPhoto())
+                        .fit().centerCrop()
+                        .transform(new CircleTransform())
+                        .into(photoPlayer);
+            }
+            else
+                photoPlayer.setImageURI(Uri.parse(pair.second.getPhoto()));
         }
     }
 }

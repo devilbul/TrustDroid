@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.new_game;
+package fr.isen.trust.trustdroid.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

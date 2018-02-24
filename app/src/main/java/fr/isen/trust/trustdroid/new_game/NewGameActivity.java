@@ -8,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import fr.isen.trust.trustdroid.MainActivity;
 import fr.isen.trust.trustdroid.R;
+import fr.isen.trust.trustdroid.game.draw.GameActivity;
 import fr.isen.trust.trustdroid.player.ListPlayer;
 
 public class NewGameActivity extends AppCompatActivity {
@@ -16,8 +18,8 @@ public class NewGameActivity extends AppCompatActivity {
     private final int maxPlayer = 8;
     private final int minPlayer = 1;
     private RecyclerView mRecyclerView;
-    public static ListPlayer listPlayer;
-    private Button startGame;
+    public ListPlayer listPlayer;
+    public Button startGame;
     private Button addPlayer;
 
     @Override
@@ -39,16 +41,31 @@ public class NewGameActivity extends AppCompatActivity {
 
         if (bundle != null)
             listPlayer = ((ListPlayer) getIntent().getExtras().getSerializable("new list player"));
+        assert listPlayer != null;
         if (listPlayer.getSize() > minPlayer)
             startGame.setVisibility(View.VISIBLE);
-        if (listPlayer.getSize() == maxPlayer) addPlayer.setVisibility(View.INVISIBLE);
+        if (listPlayer.getSize() == maxPlayer)
+            addPlayer.setVisibility(View.INVISIBLE);
 
-        mRecyclerView.setAdapter(new MyAdapter(getApplicationContext()));
+        mRecyclerView.setAdapter(new MyAdapter(listPlayer, getApplicationContext()));
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
     }
 
     public void addPlayer(View v) {
         Intent addPlayer = new Intent(getApplicationContext(), AddPlayerActivity.class);
         addPlayer.putExtra("list player", listPlayer);
         startActivity(addPlayer);
+    }
+
+    public void startGame(View v) {
+        Intent startGame = new Intent(getApplicationContext(), GameActivity.class);
+        startGame.putExtra("list player", listPlayer);
+        startActivity(startGame);
     }
 }

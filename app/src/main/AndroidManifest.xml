@@ -3,6 +3,12 @@
     package="fr.isen.trust.trustdroid">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +23,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -27,7 +32,12 @@
         <activity
             android:name=".new_game.NewGameActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".new_game.AddPlayerActivity" />
+        <activity
+            android:name=".new_game.AddPlayerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".game.draw.GameActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
