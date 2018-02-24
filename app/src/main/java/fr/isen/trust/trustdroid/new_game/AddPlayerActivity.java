@@ -1,12 +1,13 @@
 package fr.isen.trust.trustdroid.new_game;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -14,8 +15,6 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import fr.isen.trust.trustdroid.R;
 import fr.isen.trust.trustdroid.player.ListPlayer;
@@ -61,10 +60,12 @@ public class AddPlayerActivity extends AppCompatActivity {
         if (usernameResult.length() > 0) {
             if (isUsernameNeverUsed(listPlayer, usernameResult)) {
                 newPlayer.setUsername(usernameResult);
+
                 if (mCurrentPhotoPath == null)
-                    newPlayer.setPhoto("http://www.sefairepayer.com/images/profils-debiteur/profil-irreductible.png");
+                    newPlayer.setPhoto("defaut");
                 else
                     newPlayer.setPhoto(mCurrentPhotoPath);
+
                 listPlayer.addPlayer(newPlayer);
                 Toast.makeText(getApplicationContext(), "Joueur ajouté !", Toast.LENGTH_SHORT).show();
                 commitAddPlayer.putExtra("new list player", listPlayer);
@@ -77,6 +78,30 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public void takePhoto(View v) {
+        final CharSequence[] items = {"Prendre une photo", "Image par défaut", "Annuler"};
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+        alertDialog.setTitle("Ajouter une photo !");
+        alertDialog.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                if (items[i].equals("Prendre une photo")) {
+                    startCamera();
+                } else if (items[i].equals("Image par défaut")) {
+                    Bitmap image = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.mipmap.defaut);
+                    Bitmap resizeImage = Bitmap.createScaledBitmap(image, 512, 512, false);
+                    photo.setImageBitmap(resizeImage);
+                    newPlayer.setPhoto("defaut");
+                } else if (items[i].equals("Annuler")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        alertDialog.show();
+    }
+
+    private void startCamera() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             takePictureIntent.putExtra("android.intent.extras.CAMERA_FACING", 1);

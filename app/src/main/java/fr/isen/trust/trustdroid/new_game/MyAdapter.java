@@ -93,9 +93,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public void display(Pair<String, Player> pair) {
             usernamePlayer.setText(pair.first);
 
-            if (pair.second.getPhoto().startsWith("http")) {
+            if (pair.second.getPhoto().equals("defaut")) {
                 Picasso.with(context)
-                        .load(pair.second.getPhoto())
+                        .load(R.mipmap.defaut)
                         .fit().centerCrop()
                         .transform(new CircleTransform())
                         .into(photoPlayer);

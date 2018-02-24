@@ -12,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import fr.isen.trust.trustdroid.MainActivity;
 import fr.isen.trust.trustdroid.R;
 import fr.isen.trust.trustdroid.regle.fragments.*;
+import fr.isen.trust.trustdroid.util.ZoomOutPageTransformer;
 
 public class RegleActivity extends FragmentActivity {
 
