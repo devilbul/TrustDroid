@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import fr.isen.trust.trustdroid.new_game.NewGameActivity;
 import fr.isen.trust.trustdroid.regle.RegleActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,8 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClick(View v){
-        Intent goToRegle = new Intent(getApplicationContext(), RegleActivity.class);
-        startActivity(goToRegle);
+    public void displayRegle(View v) {
+        startActivity(new Intent(getApplicationContext(), RegleActivity.class));
+    }
+
+    public void createLobby(View v) {
+        startActivity(new Intent(getApplicationContext(), NewGameActivity.class));
     }
 }

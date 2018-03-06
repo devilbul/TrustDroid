@@ -2,4 +2,14 @@
     <string name="app_name">TrustDroid</string>
     <string name="yeah">Yeah !!!!!!!!!!</string>
     <string name="todo">TODO</string>
+    <string name="home">Trust</string>
+    <string name="regle">Règle</string>
+    <string name="new_game">Lancer partie</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="new_lobby">Nouvelle Partie</string>
+    <string name="start">Lancer !</string>
+    <string name="add_player">Ajouter un joueur</string>
+    <string name="username">Pseudo</string>
+    <string name="commit_add">Ajouter</string>
 </resources>

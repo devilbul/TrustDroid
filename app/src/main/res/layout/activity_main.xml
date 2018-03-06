@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="fr.isen.trust.trustdroid.MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/regle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="162dp"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="277dp"
-        android:onClick="onClick"
-        android:text="Règle"
+        android:layout_marginTop="32dp"
+        android:onClick="displayRegle"
+        android:text="@string/regle"
+        app:layout_constraintEnd_toEndOf="@+id/new_game"
+        app:layout_constraintStart_toStartOf="@+id/new_game"
+        app:layout_constraintTop_toBottomOf="@+id/new_game" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="159dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="164dp"
+        android:text="@string/home"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/new_game"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:onClick="createLobby"
+        android:text="@string/new_game"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 </android.support.constraint.ConstraintLayout>

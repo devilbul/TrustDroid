@@ -1,5 +1,6 @@
 package fr.isen.trust.trustdroid.regle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -8,8 +9,10 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import fr.isen.trust.trustdroid.MainActivity;
 import fr.isen.trust.trustdroid.R;
 import fr.isen.trust.trustdroid.regle.fragments.*;
+import fr.isen.trust.trustdroid.util.ZoomOutPageTransformer;
 
 public class RegleActivity extends FragmentActivity {
 
@@ -30,11 +33,7 @@ public class RegleActivity extends FragmentActivity {
 
     @Override
     public void onBackPressed() {
-        if (mPager.getCurrentItem() == 0) {
-            super.onBackPressed();
-        } else {
-            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
-        }
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
