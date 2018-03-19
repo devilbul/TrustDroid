@@ -1,7 +1,7 @@
 package fr.isen.trust.trustdroid.util;
 
-import fr.isen.trust.trustdroid.player.ListPlayer;
-import fr.isen.trust.trustdroid.player.Player;
+import fr.isen.trust.trustdroid.model.ListPlayer;
+import fr.isen.trust.trustdroid.model.Player;
 
 public class Find {
 

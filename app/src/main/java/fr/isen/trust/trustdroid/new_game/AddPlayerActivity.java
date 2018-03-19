@@ -20,8 +20,8 @@ import java.io.File;
 import java.io.IOException;
 
 import fr.isen.trust.trustdroid.R;
-import fr.isen.trust.trustdroid.player.ListPlayer;
-import fr.isen.trust.trustdroid.player.Player;
+import fr.isen.trust.trustdroid.model.ListPlayer;
+import fr.isen.trust.trustdroid.model.Player;
 
 import static fr.isen.trust.trustdroid.util.Find.isUsernameNeverUsed;
 
@@ -63,15 +63,10 @@ public class AddPlayerActivity extends AppCompatActivity {
             if (isUsernameNeverUsed(listPlayer, usernameResult)) {
                 newPlayer.setUsername(usernameResult);
 
-                Log.i("????", mCurrentPhotoPath);
-
-
                 if (mCurrentPhotoPath == null)
                     newPlayer.setPhoto("defaut");
                 else
                     newPlayer.setPhoto(mCurrentPhotoPath);
-
-                Log.i("????", mCurrentPhotoPath);
 
                 listPlayer.addPlayer(newPlayer);
                 Toast.makeText(getApplicationContext(), "Joueur ajouté !", Toast.LENGTH_SHORT).show();

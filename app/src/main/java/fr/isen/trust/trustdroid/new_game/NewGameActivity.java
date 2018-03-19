@@ -11,12 +11,12 @@ import android.widget.Button;
 import fr.isen.trust.trustdroid.MainActivity;
 import fr.isen.trust.trustdroid.R;
 import fr.isen.trust.trustdroid.game.GameActivity;
-import fr.isen.trust.trustdroid.player.ListPlayer;
+import fr.isen.trust.trustdroid.model.ListPlayer;
 
 public class NewGameActivity extends AppCompatActivity {
 
     private final int maxPlayer = 8;
-    private final int minPlayer = 1;
+    private final int minPlayer = 3;
     private RecyclerView mRecyclerView;
     public ListPlayer listPlayer;
     public Button startGame;

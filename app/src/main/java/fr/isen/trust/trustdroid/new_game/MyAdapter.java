@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.isen.trust.trustdroid.R;
-import fr.isen.trust.trustdroid.player.ListPlayer;
-import fr.isen.trust.trustdroid.player.Player;
+import fr.isen.trust.trustdroid.model.ListPlayer;
+import fr.isen.trust.trustdroid.model.Player;
 import fr.isen.trust.trustdroid.util.CircleTransform;
 
 import static fr.isen.trust.trustdroid.util.Find.findPlayer;

@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import fr.isen.trust.trustdroid.R;
-import fr.isen.trust.trustdroid.player.ListPlayer;
-import fr.isen.trust.trustdroid.player.Player;
+import fr.isen.trust.trustdroid.model.ListPlayer;
+import fr.isen.trust.trustdroid.model.Player;
 
 public class GameActivity extends AppCompatActivity {
 

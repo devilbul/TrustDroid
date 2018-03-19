@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.player;
+package fr.isen.trust.trustdroid.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
