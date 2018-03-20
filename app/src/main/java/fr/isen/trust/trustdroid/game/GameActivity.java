@@ -1,17 +1,15 @@
 package fr.isen.trust.trustdroid.game;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 
 import fr.isen.trust.trustdroid.R;
 import fr.isen.trust.trustdroid.model.ListPlayer;
@@ -44,33 +42,43 @@ public class GameActivity extends AppCompatActivity {
             out.setText(list.toString());
         }
 
+        /**===========================================================================================================================================*/
+        /*Bitmap image = getBitmapFromLocalPath(listPlayer.getPlayer(0).getPhoto(), 4);
+
+        Canvas barreau = new Canvas(image.copy(Bitmap.Config.ARGB_8888, true));
+        Paint p = new Paint();
+        p.setStrokeWidth(5);
+
+        //barreau.drawBitmap(BitmapFactory.decodeResource(this.getResources(), R.mipmap.barreau), image.getWidth() / 2, image.getHeight() / 2, p);
+        barreau.drawBitmap(BitmapFactory.decodeResource(this.getResources(), R.mipmap.barreau), new Matrix(), p);
+        barreau.drawPicture(new Picture());*/
+
+        /**===========================================================================================================================================*/
+
+        Bitmap bmp = getBitmapFromLocalPath(listPlayer.getPlayer(0).getPhoto(), 4);
+        Bitmap alteredBitmap = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
+        Canvas canvas = new Canvas(alteredBitmap);
+
+        Paint paint = new Paint();
+        canvas.drawBitmap(bmp, new Matrix(), paint);
+
+        Bitmap barreau = BitmapFactory.decodeResource(this.getResources(), R.mipmap.barreau);
+        canvas.drawBitmap(Bitmap.createScaledBitmap(barreau, alteredBitmap.getWidth(), alteredBitmap.getHeight(), false), new Matrix(), paint);
+
+        Bitmap assassin = BitmapFactory.decodeResource(this.getResources(), R.mipmap.assassin);
+        canvas.drawBitmap(Bitmap.createScaledBitmap(assassin, assassin.getWidth()/2, assassin.getHeight()/2, false), alteredBitmap.getWidth() - 256, 0, paint);
+
+        image1.setImageBitmap(alteredBitmap);
     }
 
-    public void test() {
+    public static Bitmap getBitmapFromLocalPath(String path, int sampleSize) {
         try {
-            Bitmap image = getBitmapFromUri(this, Uri.parse(listPlayer.getPlayer(0).getPhoto()));
-
-            BitmapFactory editedImage ;
-
-            image1.setImageBitmap(image);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static Bitmap getBitmapFromUri(Context context, Uri uri)
-            throws FileNotFoundException {
-        final InputStream imageStream = context.getContentResolver()
-                .openInputStream(uri);
-        try {
-            return BitmapFactory.decodeStream(imageStream);
-        } finally {
-            try {
-                if (imageStream != null)
-                    imageStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = sampleSize;
+            return BitmapFactory.decodeFile(path, options);
+        } catch (Exception e) {
+            Log.i("TAG", "Some exception " + e);
+            return null;
         }
     }
 }

@@ -56,6 +56,13 @@ public class AddPlayerActivity extends AppCompatActivity {
         commitAddPlayer.removeExtra("new player");
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), NewGameActivity.class).putExtra("new list player", listPlayer));
+        finish();
+    }
+
     public void commitAddPlayer(View v) {
         String usernameResult = username.getText().toString();
 
@@ -84,7 +91,7 @@ public class AddPlayerActivity extends AppCompatActivity {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
 
         alertDialog.setTitle("Ajouter une photo !");
-        alertDialog.setItems(items,     new DialogInterface.OnClickListener() {
+        alertDialog.setItems(items, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {
                 if (items[i].equals("Prendre une photo")) {
@@ -110,13 +117,12 @@ public class AddPlayerActivity extends AppCompatActivity {
 
         if (!dir.exists()) dir.mkdir();
 
-        uriPhoto = Uri.withAppendedPath(FileProvider.getUriForFile(getApplicationContext(), getPackageName()+".fileprovider", dir), fileName);
+        uriPhoto = Uri.withAppendedPath(FileProvider.getUriForFile(getApplicationContext(), getPackageName() + ".fileprovider", dir), fileName);
         mCurrentPhotoPath = filePath + "/" + fileName;
 
         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uriPhoto);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null)
             startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
-        }
     }
 
     @Override

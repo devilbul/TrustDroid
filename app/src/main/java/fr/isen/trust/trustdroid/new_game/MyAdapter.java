@@ -81,7 +81,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                     Toast.makeText(context, "Joueur supprimé !", Toast.LENGTH_SHORT).show();
                     adapter.notifyItemRemoved(index);
 
-                    if (listPlayer.getSize() == 1) {
+                    if (listPlayer.getSize() == 3) {
                         Intent refresh = new Intent(context, NewGameActivity.class);
                         refresh.putExtra("new list player", listPlayer);
                         context.startActivity(refresh);

@@ -61,11 +61,13 @@ public class NewGameActivity extends AppCompatActivity {
         Intent addPlayer = new Intent(getApplicationContext(), AddPlayerActivity.class);
         addPlayer.putExtra("list player", listPlayer);
         startActivity(addPlayer);
+        finish();
     }
 
     public void startGame(View v) {
         Intent startGame = new Intent(getApplicationContext(), GameActivity.class);
         startGame.putExtra("list player", listPlayer);
         startActivity(startGame);
+        finish();
     }
 }

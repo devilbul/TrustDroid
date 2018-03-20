@@ -3,43 +3,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="fr.isen.trust.trustdroid.MainActivity">
 
-    <Button
-        android:id="@+id/regle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="displayRegle"
-        android:text="@string/regle"
-        app:layout_constraintEnd_toEndOf="@+id/new_game"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="376dp"
+        android:layout_height="519dp"
+        android:layout_marginTop="112dp"
         app:layout_constraintStart_toStartOf="@+id/new_game"
-        app:layout_constraintTop_toBottomOf="@+id/new_game" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="159dp"
         android:layout_marginStart="159dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="40dp"
         android:text="@string/home"
-        android:textSize="60sp"
+        android:textColor="#E37D00"
+        android:textSize="80sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/new_game"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="244dp"
+        android:background="@drawable/buttonshape"
         android:onClick="createLobby"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:text="@string/new_game"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:textColor="#E37D00"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <Button
+        android:id="@+id/regle"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="displayRegle"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/regle"
+        android:textColor="#E37D00"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/new_game"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/new_game"
+        app:layout_constraintTop_toBottomOf="@+id/new_game" />
 
 </android.support.constraint.ConstraintLayout>
