@@ -18,6 +18,7 @@ public class GameAdvancement implements Serializable {
     private int betrayReward;
     private int betrayPenalty;
     private int goal = 10;
+    private boolean isCompleted = false;
 
     public GameAdvancement(ListPlayer players, int allyReward, int tie, int betrayReward, int betrayPenalty) {
         this.players = players;
@@ -133,5 +134,13 @@ public class GameAdvancement implements Serializable {
 
     public void setRounds(int[][] rounds) {
         this.rounds = rounds;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
     }
 }

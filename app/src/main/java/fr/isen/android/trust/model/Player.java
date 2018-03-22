@@ -12,6 +12,7 @@ public class Player implements Serializable {
     private String vote;
     private String buff;
     private String win;
+    private boolean isReady = false;
 
     public Player() {
         this.username = "";
@@ -108,5 +109,13 @@ public class Player implements Serializable {
     @Override
     public String toString() {
         return this.getUsername();
+    }
+
+    public boolean isReady() {
+        return isReady;
+    }
+
+    public void setReady(boolean ready) {
+        isReady = ready;
     }
 }

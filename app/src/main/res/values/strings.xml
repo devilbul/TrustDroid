@@ -32,7 +32,8 @@
         \t-Si les deux joueurs ont choisi de s’allier, les deux joueurs gagnent 2 points\n\n
         \t-Si un joueur s’allie mais que l’autre le trahi, celui qui s’est allié perd 1 point et celui qui a trahi en gagne 3.\n\n
         \t-Si les deux joueurs ont choisi de se trahir, alors aucun des deux ne gagne de point.\n\n
-        \t\t\t\t\tNote: En cas de nombre de joueurs impaire, deux joueurs devront voter ensemble comme un seul.</string>>
+        \t\t\t\t\tNote: En cas de nombre de joueurs impaire, deux joueurs devront voter ensemble comme un seul.</string>
+    >
     <string name="title_frag_4_text">Rôles</string>
     <string name="content_frag_4_text">\t\tInnocent:\n
          Les innocents sont les rôles de base du jeu. Ils apparaissent avec l’événement “Blanc comme neige”. Les innocents ne peuvent gagner la partie que si tous
@@ -50,4 +51,5 @@
     </string>>
     <string name="title_frag_5_text"></string>
     <string name="content_frag_5_text"></string>
+    <string name="title_activity_debat">DebatActivity</string>
 </resources>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fr.isen.android.trust.regle.RegleActivity">
+
+    <TextView
+        android:id="@+id/username_j1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="name" />
+
+    <ImageView
+        android:id="@+id/image_j1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/username_j1"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/username_j1"
+        app:layout_constraintTop_toBottomOf="@+id/username_j1"
+        app:srcCompat="@mipmap/defaut" />
+
+    <ImageView
+        android:id="@+id/image_j2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/username_j2"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="@+id/username_j2"
+        app:layout_constraintTop_toBottomOf="@+id/username_j2"
+        app:srcCompat="@mipmap/defaut" />
+
+    <ImageView
+        android:id="@+id/image_j3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/username_j3"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/username_j3"
+        app:layout_constraintTop_toBottomOf="@+id/username_j3"
+        app:srcCompat="@mipmap/defaut" />
+
+    <ImageView
+        android:id="@+id/image_j4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/username_j4"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="@+id/username_j4"
+        app:layout_constraintTop_toBottomOf="@+id/username_j4"
+        app:srcCompat="@mipmap/defaut" />
+
+    <TextView
+        android:id="@+id/username_j2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        app:layout_constraintEnd_toEndOf="@+id/username_j1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/username_j1"
+        app:layout_constraintTop_toTopOf="@+id/username_j1"
+        tools:text="name" />
+
+    <TextView
+        android:id="@+id/username_j3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="164dp"
+        app:layout_constraintEnd_toEndOf="@+id/username_j4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/username_j4"
+        app:layout_constraintTop_toTopOf="@+id/username_j4"
+        tools:text="name" />
+
+    <TextView
+        android:id="@+id/username_j4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="272dp"
+        app:layout_constraintEnd_toEndOf="@+id/username_j2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/username_j2"
+        app:layout_constraintTop_toTopOf="@+id/username_j2"
+        tools:text="name" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="VS"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/username_j2"
+        app:layout_constraintStart_toEndOf="@+id/username_j1"
+        app:layout_constraintTop_toTopOf="@+id/image_j1" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="VS"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/username_j4"
+        app:layout_constraintStart_toEndOf="@+id/username_j3"
+        app:layout_constraintTop_toTopOf="@+id/image_j3" />
+
+    <TextView
+        android:id="@+id/score_j1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/image_j1"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="@+id/image_j1"
+        app:layout_constraintTop_toBottomOf="@+id/image_j1"
+        tools:text="Score" />
+
+    <TextView
+        android:id="@+id/score_j2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/image_j2"
+        app:layout_constraintStart_toStartOf="@+id/image_j2"
+        app:layout_constraintTop_toBottomOf="@+id/image_j2"
+        tools:text="Score" />
+
+    <TextView
+        android:id="@+id/score_j3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/image_j3"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="@+id/image_j3"
+        app:layout_constraintTop_toBottomOf="@+id/image_j3"
+        tools:text="Score" />
+
+    <TextView
+        android:id="@+id/score_j4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/image_j4"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="@+id/image_j4"
+        app:layout_constraintTop_toBottomOf="@+id/image_j4"
+        tools:text="Score" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:onClick="readyToFight"
+        android:text="Prêt !"
+        app:layout_constraintEnd_toStartOf="@+id/score_j4"
+        app:layout_constraintStart_toEndOf="@+id/score_j3"
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
+</android.support.constraint.ConstraintLayout>

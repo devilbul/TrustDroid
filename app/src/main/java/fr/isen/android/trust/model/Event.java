@@ -6,10 +6,10 @@ public class Event implements Serializable {
 
     private String title;
     private String description;
-    private String image;
+    private int image;
     private int[] banEvent;
 
-    public Event(String title, String description, String image, int[] banEvent) {
+    public Event(String title, String description, int image, int[] banEvent) {
         this.title = title;
         this.description = description;
         this.image = image;
@@ -24,11 +24,11 @@ public class Event implements Serializable {
         this.banEvent = banEvent;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 

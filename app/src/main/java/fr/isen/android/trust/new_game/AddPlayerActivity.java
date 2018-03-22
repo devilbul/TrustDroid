@@ -49,7 +49,7 @@ public class AddPlayerActivity extends AppCompatActivity {
         listPlayer = null;
 
         if (bundle != null)
-            listPlayer = ((ListPlayer) getIntent().getExtras().getSerializable("list player"));
+            listPlayer = ((ListPlayer) bundle.getSerializable("list player"));
 
         fileName = "user" + listPlayer.getSize() + ".jpg";
 

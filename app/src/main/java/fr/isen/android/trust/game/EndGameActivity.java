@@ -25,7 +25,6 @@ public class EndGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        out = findViewById(R.id.out);
         Bundle bundle = getIntent().getExtras();
         listPlayer = null;
         StringBuilder list = new StringBuilder();
@@ -33,7 +32,7 @@ public class EndGameActivity extends AppCompatActivity {
         image1 = findViewById(R.id.imageView);
 
         if (bundle != null)
-            listPlayer = ((ListPlayer) getIntent().getExtras().getSerializable("list player"));
+            listPlayer = ((ListPlayer) bundle.getSerializable("list player"));
 
         if (listPlayer.getSize() > 0) {
             for (Player player : listPlayer.getListPlayer())
