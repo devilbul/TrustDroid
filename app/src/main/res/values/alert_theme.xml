@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AlertDialogCustom" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
+        <item name="android:background">#4646ea</item>
+        <item name="android:textColor">#E37D00</item>
+    </style>
+</resources>

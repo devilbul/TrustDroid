@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.new_game;
+package fr.isen.android.trust.new_game;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
-import fr.isen.trust.trustdroid.MainActivity;
+import fr.isen.android.trust.MainActivity;
 import fr.isen.trust.trustdroid.R;
-import fr.isen.trust.trustdroid.game.GameActivity;
-import fr.isen.trust.trustdroid.model.ListPlayer;
+import fr.isen.android.trust.game.GameActivity;
+import fr.isen.android.trust.model.ListPlayer;
 
 public class NewGameActivity extends AppCompatActivity {
 

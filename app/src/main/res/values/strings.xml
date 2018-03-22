@@ -3,7 +3,7 @@
     <string name="yeah">Yeah !!!!!!!!!!</string>
     <string name="todo">TODO</string>
     <string name="home">Trust</string>
-    <string name="regle">Règle</string>
+    <string name="regle">Règles</string>
     <string name="new_game">Lancer partie</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -12,4 +12,42 @@
     <string name="add_player">Ajouter un joueur</string>
     <string name="username">Pseudo</string>
     <string name="commit_add">Ajouter</string>
+    <string name="title_frag_1_text">Instruction</string>
+    <string name="content_frag_1_text">\t\t\t\t\tBienvenue au Trust Hotel, vous êtes mes hôtes jusqu’à nouvel ordre. Ici vos certitudes pourraient s’effondrer
+        et ceux que vous pensiez vos amis pourraient devenir vos pires ennemis. Si vous voulez vous échapper, vous allez devoir jouer à un petit jeu et suivre mes règles:\n\n
+        \t\t\t\t\tEn début de partie, chaque joueur se voit attribuer un quota de 3 points, au fil du jeu vous aurez des occasions d’en gagner ou perdre.
+        Accumulez ces points et vous pourriez vous frayer un chemin vers la liberté, perdez les tous et vous serez effacé du Trust Hotel.\n\n
+        \t\t\t\t\tEn début de partie, la majorité des joueurs aura pour rôle Innocent, sauf un qui sera Traître, au fil de la partie, le rôle de certain
+        innocents risque de changer. Les conditions de victoires changent en fonction du rôle, essayez donc de biens tous les comprendre afin d\'appréhender le comportement des autres joueurs.</string>
+    <string name="title_frag_2_text">Bouton vers liste rôles</string>
+    <string name="content_frag_2_text">\t\t\t\t\tLe jeu alterne entre deux phases qui se succèdent: la phase événement et la phase de vote:\n\n
+        \t\t\t\t\tDurant la phase événement, le smartphone passe entre tous les joueurs et donne des informations diverses. Cela peut être l’ajout d’une règle
+        spéciale, un changement de rôle ou des informations sur un autre joueur.</string>
+    <string name="title_frag_3_text">Bouton Liste Event</string>
+    <string name="content_frag_3_text">\t\t\t\t\tIl est interdit de montrer un écran qui vous est destiné à un autre joueur, vous avez le droit de partager les
+        informations que vous avez reçu mais cela doit se faire oralement lors des débats.\n\n
+        \t\t\t\t\tLa phase de vote se compose d’un débat préliminaire puis des face à face.\n\n
+        Dans cette phase, les joueurs se font face dans des “duels de confiance” et les différents face à face s’affichent sur l’écran de débat.\n\n
+        Lors des face à face, les joueurs auront le choix entre trahir ou s’allier avec leur opposant:\n\n
+        \t-Si les deux joueurs ont choisi de s’allier, les deux joueurs gagnent 2 points\n\n
+        \t-Si un joueur s’allie mais que l’autre le trahi, celui qui s’est allié perd 1 point et celui qui a trahi en gagne 3.\n\n
+        \t-Si les deux joueurs ont choisi de se trahir, alors aucun des deux ne gagne de point.\n\n
+        \t\t\t\t\tNote: En cas de nombre de joueurs impaire, deux joueurs devront voter ensemble comme un seul.</string>>
+    <string name="title_frag_4_text">Rôles</string>
+    <string name="content_frag_4_text">\t\tInnocent:\n
+         Les innocents sont les rôles de base du jeu. Ils apparaissent avec l’événement “Blanc comme neige”. Les innocents ne peuvent gagner la partie que si tous
+        les innocents et tous les détectives atteignent les 10 points ou s’il ne reste que des innocents et détectives en jeu.\n\n
+        \t\tTraître\n
+        Il y a forcément 1 traître à la fin du premier tour. Ils apparaissent avec l’événement “Veste retournée”. Les traîtres gagnent dès qu’ils atteignent les 10 points individuellement.\n\n
+        \t\tSuiveur\n
+        Les Suiveurs apparaissent avec l’événement “À ses crochets”. Les suiveurs sont lié à un traître et ne peuvent gagner que si leur traître lié gagne ou si
+        leur traître et eux sont les seuls joueurs restants.\n\n
+        \t\tDétective\n
+        Les détectives sont des innocents spéciaux. Ils apparaissent avec l’événement “Élémentaire mon cher”. Ils ont la capacité de dénoncer un joueur une fois
+        par tour: Si le détective devine correctement le rôle du joueur ciblé, la cible perd 3 points, s’il se trompe c’est lui qui perd 3 points. Le détective
+        disparaît si tous les innocents disparaissent. Ses conditions de victoire sont les mêmes que celles des innocents.\n\n
+        \t\t
+    </string>>
+    <string name="title_frag_5_text"></string>
+    <string name="content_frag_5_text"></string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.isen.trust.trustdroid.game.draw.GameActivity">
+    tools:context="fr.isen.android.trust.game.draw.GameActivity">
 
     <TextView
         android:id="@+id/out"

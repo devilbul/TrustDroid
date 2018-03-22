@@ -36,7 +36,7 @@
         android:id="@+id/new_game"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="276dp"
         android:background="@drawable/buttonshape"
         android:onClick="createLobby"
         android:shadowColor="#A8A8A8"

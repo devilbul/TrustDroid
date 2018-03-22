@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.game;
+package fr.isen.android.trust.game;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import fr.isen.trust.trustdroid.R;
-import fr.isen.trust.trustdroid.model.ListPlayer;
-import fr.isen.trust.trustdroid.model.Player;
+import fr.isen.android.trust.model.ListPlayer;
+import fr.isen.android.trust.model.Player;
 
-public class GameActivity extends AppCompatActivity {
+public class EndGameActivity extends AppCompatActivity {
 
     private ListPlayer listPlayer;
     private TextView out;

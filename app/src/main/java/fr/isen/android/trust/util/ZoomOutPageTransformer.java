@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.util;
+package fr.isen.android.trust.util;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

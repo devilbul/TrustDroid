@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/background"
-    tools:context="fr.isen.trust.trustdroid.new_game.AddPlayerActivity">
+    tools:context="fr.isen.android.trust.new_game.AddPlayerActivity">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/username_wapper"

@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.new_game;
+package fr.isen.android.trust.new_game;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,11 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.isen.trust.trustdroid.R;
-import fr.isen.trust.trustdroid.model.ListPlayer;
-import fr.isen.trust.trustdroid.model.Player;
-import fr.isen.trust.trustdroid.util.CircleTransform;
+import fr.isen.android.trust.model.ListPlayer;
+import fr.isen.android.trust.model.Player;
+import fr.isen.android.trust.util.CircleTransform;
 
-import static fr.isen.trust.trustdroid.util.Find.findPlayer;
+import static fr.isen.android.trust.util.Find.findPlayer;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private List<Pair<String, Player>> players = new ArrayList<>();

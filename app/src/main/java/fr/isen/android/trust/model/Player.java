@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.model;
+package fr.isen.android.trust.model;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.new_game;
+package fr.isen.android.trust.new_game;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -19,11 +20,11 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 
+import fr.isen.android.trust.model.ListPlayer;
+import fr.isen.android.trust.model.Player;
 import fr.isen.trust.trustdroid.R;
-import fr.isen.trust.trustdroid.model.ListPlayer;
-import fr.isen.trust.trustdroid.model.Player;
 
-import static fr.isen.trust.trustdroid.util.Find.isUsernameNeverUsed;
+import static fr.isen.android.trust.util.Find.isUsernameNeverUsed;
 
 public class AddPlayerActivity extends AppCompatActivity {
 
@@ -88,7 +89,7 @@ public class AddPlayerActivity extends AppCompatActivity {
 
     public void setUserPhoto(View v) {
         final CharSequence[] items = {"Prendre une photo", "Image par défaut", "Annuler"};
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom));
 
         alertDialog.setTitle("Ajouter une photo !");
         alertDialog.setItems(items, new DialogInterface.OnClickListener() {

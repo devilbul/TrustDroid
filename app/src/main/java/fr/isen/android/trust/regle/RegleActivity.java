@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.regle;
+package fr.isen.android.trust.regle;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,10 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import fr.isen.trust.trustdroid.MainActivity;
+import fr.isen.android.trust.MainActivity;
 import fr.isen.trust.trustdroid.R;
-import fr.isen.trust.trustdroid.regle.fragments.*;
-import fr.isen.trust.trustdroid.util.ZoomOutPageTransformer;
+import fr.isen.android.trust.regle.fragments.*;
+import fr.isen.android.trust.util.ZoomOutPageTransformer;
 
 public class RegleActivity extends FragmentActivity {
 

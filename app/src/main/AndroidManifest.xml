@@ -29,7 +29,7 @@
         </provider>
 
         <activity
-            android:name=".MainActivity"
+            android:name="fr.isen.android.trust.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,16 +37,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".regle.RegleActivity"
+            android:name="fr.isen.android.trust.regle.RegleActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".new_game.NewGameActivity"
+            android:name="fr.isen.android.trust.new_game.NewGameActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".new_game.AddPlayerActivity"
+            android:name="fr.isen.android.trust.new_game.AddPlayerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".game.GameActivity"
+            android:name="fr.isen.android.trust.game.GameActivity"
             android:screenOrientation="portrait" />
     </application>
 

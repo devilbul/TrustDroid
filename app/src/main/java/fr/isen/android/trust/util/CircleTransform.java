@@ -1,4 +1,4 @@
-package fr.isen.trust.trustdroid.util;
+package fr.isen.android.trust.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
